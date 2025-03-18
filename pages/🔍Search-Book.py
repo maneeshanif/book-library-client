@@ -50,6 +50,8 @@ if st.button("Search"):
                 st.write("No matching books found.")
         else:
             st.error(f"Search failed: {response.status_code}")
+            if (response.status_code == 500):
+                st.warning("Please reload ur app again")
     except Exception as e:
         st.error(f"Error: {e}")
 

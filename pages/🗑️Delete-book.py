@@ -55,6 +55,8 @@ if st.button("Delete Book"):
             st.rerun()
         else:
             st.error(f"Deletion failed: {response.status_code}")
+            if (response.status_code == 500):
+                st.warning("Please reload ur app again")
     except Exception as e:
         st.error(f"Error: {e}")
 

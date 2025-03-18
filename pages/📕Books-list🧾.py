@@ -16,6 +16,8 @@ def get_books():
             return response.json()
         else:
             st.error(f"Failed to get books: {response.status_code}")
+            if (response.status_code == 500):
+                st.warning("Please reload ur app again")
             return []
     except Exception as e:
         st.error(f"Error: {e}")
